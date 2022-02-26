@@ -37,6 +37,7 @@ public class EmployeeService {
   }
 
   public ResponseEntity<Employee> getEmployeeById(Long id) {
+
     Employee employee = findExistingEmployeeById(id);
     return new ResponseEntity<Employee>(employee, HttpStatus.OK);
   }
@@ -57,7 +58,7 @@ public class EmployeeService {
   public ResponseEntity<Employee> deleteEmployee(Long id) {
     Employee employee = findExistingEmployeeById(id);
     employeeRepository.deleteById(employee.getId());
-    return new ResponseEntity<Employee>(HttpStatus.NO_CONTENT);
+    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
   private Employee findExistingEmployeeById(Long id) {

@@ -23,6 +23,7 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
   @ResponseStatus(HttpStatus.NOT_FOUND)
   @ResponseBody
   public ErrorResponse handleRecordNotFoundException(final RecordNotFoundException ex) {
+    log.error("Record not found error", ex);
     return new ErrorResponse("RECORD_NOT_FOUND", "The requested employee not found");
   }
 
@@ -32,6 +33,7 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
       HttpHeaders headers,
       HttpStatus status,
       WebRequest request) {
+    log.error("Invalid arguments error", ex);
 
     Map<String, String> errors = new HashMap<>();
     ex.getBindingResult()

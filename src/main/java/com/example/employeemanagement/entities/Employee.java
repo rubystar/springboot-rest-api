@@ -19,7 +19,7 @@ public class Employee {
   private Long id;
 
   @NotEmpty(message = "first name cannot be blank")
-  @Size(min = 6, message = "first name should have at least 6 characters")
+  @Size(min = 3, message = "first name should have at least 3 characters")
   @Column(name = "first_name", nullable = false)
   private String firstName;
 
