@@ -24,6 +24,8 @@ mvn spring-boot:run
 ```
 mvn test
 ```
+### Api Endpoints(Swagger UI)
+* http://localhost:8080/swagger-ui/index.html#
 
 
 
